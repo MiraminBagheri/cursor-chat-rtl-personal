@@ -1,0 +1,76 @@
+{
+  "name": "cursor-chat-rtl",
+  "displayName": "Cursor Chat RTL",
+  "description": "Fork of Cursor Chat RTL with default-on RTL, broader Agent/Composer selectors, and stronger BiDi for Persian/Arabic/Hebrew. Patches Cursor workbench files. Upstream: yechielby/cursor-chat-rtl-extension.",
+  "version": "0.2.1",
+  "publisher": "MiraminBagheri",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MiraminBagheri/cursor-chat-rtl-extension"
+  },
+  "homepage": "https://github.com/MiraminBagheri/cursor-chat-rtl-extension#readme",
+  "bugs": {
+    "url": "https://github.com/MiraminBagheri/cursor-chat-rtl-extension/issues"
+  },
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "arabic",
+    "bidi",
+    "bidirectional",
+    "chat-rtl",
+    "cursor",
+    "cursor-app",
+    "cursor-ai",
+    "cursor-chat",
+    "cursor-ide",
+    "cursor-only",
+    "farsi",
+    "hebrew",
+    "persian",
+    "right-to-left",
+    "rtl",
+    "text-direction",
+    "toggle-rtl",
+    "rtl-support"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "icon": "cursor-chat-rtl-logo.png",
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursor-rtl.add",
+        "title": "Cursor Chat RTL: Activate"
+      },
+      {
+        "command": "cursor-rtl.remove",
+        "title": "Cursor Chat RTL: Deactivate"
+      },
+      {
+        "command": "cursor-rtl.status",
+        "title": "Cursor Chat RTL: Check Status"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.mjs --production",
+    "watch": "node esbuild.mjs --watch",
+    "compile": "node esbuild.mjs",
+    "package": "npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.94.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.0"
+  }
+}
